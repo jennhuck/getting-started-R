@@ -655,7 +655,7 @@ Check out tidyverse's forcats package for more details on how to manage factors.
 Below summary, type: mean...open parentheses...homes...dollar sign...lotsize
 ```{r}
 summary(homes$lotsize)  # Summary of lotsize variable
-me
+
 ```
 
 **Use logical vectors to query data:**
@@ -671,8 +671,7 @@ sum(homes$totalvalue > 1e6) # 1e6 is fast way of writing 1,000,000
 
 ```
 
-For each observation, if the total value is over $1,000,000, R considers that TRUE, which is stored as a 1.  Then R sums up all those 1's with the sum() 
-function.) 
+For each observation, if the total value is over $1,000,000, R considers that TRUE, which is stored as a 1.  Then R sums up all those 1's with the sum() function.) 
 
 ```{r}
 # proportion of homes over $1,000,000 (mean of 0s and 1s as a proportion of 1s)
