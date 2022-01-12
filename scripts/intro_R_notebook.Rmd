@@ -294,7 +294,9 @@ two_homes <- cottage + mansion  # Save our arithmetic as a new object
 # it_is_easy_to_read
 
 rm(Cottage)       # Remove an object
-Cottage           # Now we get an error, because the object no longer exists
+
+# Now type Cottage into the console.
+# We get an error, because the object no longer exists
 ```
 
 Tidyverse style tip: use snake_case by separating lowercase words with
