@@ -602,8 +602,9 @@ Type: summary...open parenthesis...homes
 structure by clicking on the little blue arrow next to the object in
 your Environment.
 
+Type: str...open parenthesis...homes
 ```{r}
-str(homes)
+
 ```
 
 `glimpse()`: Returns the number of columns and rows of the tibble, the
@@ -613,7 +614,7 @@ everything else in this section is from base R.
 
 Type: glimpse...open parenthesis...homes
 ```{r}
-glimpse(homes)
+
 ```
 
 ## Factors: categorical data
