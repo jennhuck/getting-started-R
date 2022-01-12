@@ -74,7 +74,7 @@ hash: \#.
 
 Let's open one now: Go to File...new File...R Script.
 
-Copy and paste lines 79-86 into it, and once you have pasted this, remove the 4 hashmarks:
+Copy and paste lines 79-86 into it, and once you have pasted this, remove the 4 backslashes:
 
 \# your name
 \# R25 Summer Research
