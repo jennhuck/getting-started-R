@@ -25,7 +25,7 @@ cottage_cost <- 200
 # Is it 80 or 160?
 
 # It is still 80, because even though we updated cottage_cost, we did not update 
-# cottage_euros calculation (line 18)
+# cottage_euros calculation.
 
 # Your turn #2------------------------------------------------------------------
 
