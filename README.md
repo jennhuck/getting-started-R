@@ -6,7 +6,7 @@ These are the project files for the Getting Started with R workshop.
 
 Last updated: 2022-01-12
 
-Workshop presentation: 2022-01-13
+Workshop presentation: 2022-01-31
 
 ## Author name and contact info
 
@@ -34,7 +34,7 @@ dplyr workshop project directory:
 
 +-- data-raw
 
-|---\\-- albemarle_homes_2020.csv
+|---\\-- albemarle_homes_2022.csv
 
 +-- scripts
 

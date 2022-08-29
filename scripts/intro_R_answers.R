@@ -1,5 +1,5 @@
 # Getting Started with R - workshop answers
-# spring 2022
+# Spring 2022
 # Jennifer Huck
 # UVA Library
 
