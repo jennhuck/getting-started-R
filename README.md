@@ -4,9 +4,9 @@ These are the project files for the Getting Started with R workshop.
 
 ## Useful dates 
 
-Last updated: 2022-01-12
+Last updated: 2022-08-29
 
-Workshop presentation: 2022-01-31
+Workshop presentation: 2022-09-01
 
 ## Author name and contact info
 
@@ -40,7 +40,7 @@ dplyr workshop project directory:
 
 |---+-- intro_R_answers.R
 
-|---\\-- intro_R_notedbook.Rmd
+|---\\-- intro_R_notedbook_script.Rmd
 
 \\-- README.md
 
