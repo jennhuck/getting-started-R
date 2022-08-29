@@ -1,5 +1,5 @@
 # Getting Started with R - workshop answers
-# Spring 2022
+# Fall 2022
 # Jennifer Huck
 # UVA Library
 
@@ -34,7 +34,7 @@ cost[2]
 
 # 2. Create a character vector consisting of 4 components. Remember the keyboard
 # shortcut for the assignment <-  operator: ALT+- or OPTION+-
-instructors <- c("Jenn", "Clay", "Erich", "Jenny")
+instructors <- c("Jenn", "Clay", "Jacob", "Nancy")
 
 # 3. Pull the 2nd and 4th elements of the vector you created in step 2.
 instructors[c(2,4)]

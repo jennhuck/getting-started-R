@@ -1,8 +1,10 @@
 ---
 title: "Getting Started with R"
 author: "Jennifer Huck, Data Librarian, UVA Library"
-date: "Spring 2022"
-output: html_notebook
+date: "Fall 2022"
+output:
+  html_document:
+    df_print: paged
 editor_options:
   chunk_output_type: inline
   markdown:
@@ -13,7 +15,8 @@ editor_options:
 
 This R Script will introduce you to scripts, installing and loading
 packages, using tidyverse, keeping R up to date, viewing and changing
-your working directory, and importing data and evaluating data. We will use data about Albemarle County homes.
+your working directory, and importing data and evaluating data. We will use data
+about Albemarle County homes.
 
 # Goals for our Workshop
 
@@ -66,7 +69,10 @@ graphical user interface.  Reproducibility practices might have a little bit of 
 R Scripts are very simple documents. It's a plain text document that
 stores your code. 
 
-Let's open one now: Go to File...new File...R Script.
+Let's open one now: Go to File...new File...R Script. In the file, enter:
+
+20^2
+20*4
 
 Press *CTRL+Enter* to run a line at a time, or highlight what you want
 to run and press the same keys.  
@@ -78,12 +84,14 @@ yourself a favor, and leave comments for the future version of yourself.
 
 Preface comments with a hashtag: `#`
 
-You can also use hashtags to "comment out" parts of your script when you
-are testing your code.
+Go back to your very simple R script, and include two comments (comment, another
+comment), one each before the two lines of code.
+
+You can also use hashtags to "comment out" parts of your script when you are testing your code.
 
 Also notice the gutter (bottom of script pane): you can use four dashes after a comment (-) to organize the script. 
 
-Now save the document and the next time you need to review your table or graphs, you will know exactly how you made them.
+Now save the document and the next time you need to review your tables or graphs, you will know exactly how you made them.
 
 # Basic R operations
 
@@ -138,7 +146,7 @@ cottage <- 1000   # Say "cottage gets one thousand"; verify in environment
 (mansion <- 10000)  # putting parenthesis around the call prints the value of `mansion`
 ```
 
-## Code Along \#3
+## Mini Code Along
 
 Take advantage of RStudio autocomplete facility: type the first 3
 letters of cottage, press Tab or Enter, then run.
@@ -146,8 +154,7 @@ letters of cottage, press Tab or Enter, then run.
 ## More objects
 
 I will put parentheses around the code to print to the console/chunk
-output. I am only doing this because it is a workshop situation and I want to display the output. You
-don't have to do it like this every time.
+output. I am only doing this because it is a workshop situation and I want to display the output. You don't have to do it like this every time.
 
 Use *Ctrl+Enter* (Win/Linux) or *Cmd+Return* (Mac) to run specific lines
 for this next chunk:
@@ -234,13 +241,7 @@ you do not have to name them:
 round(3.14159, 2)
 ```
 
-And if you do name the arguments, you can switch their order:
-
-```{r}
-round(digits = 2, x = 3.14159)
-```
-
-But it is good practice to put the non-optional arguments (like the
+It is good practice to put the non-optional arguments (like the
 number you are rounding) first in your function call, and to specify the
 names of all optional arguments. If you don't, someone reading your code
 might have to look up the definition of a function with unfamiliar
@@ -278,6 +279,7 @@ length(age)
 ```{r}
 length(heating)
 ```
+
 An important feature of a vector, is that all of the elements are the same type of data. The function class() indicates the class (the type of element) of an object:
 ```{r}
 class(age)
@@ -313,7 +315,7 @@ age[age > 30]
 ```{r}
 #1.  Pull the second element from the numeric vector age (above).
 
-#2.  Create a character vector of first names consisting of 4 components: Jenn, Clay, Marieke, and David 
+#2.  Create a character vector of first names consisting of 4 components: Jenn, Clay, Jacob, and Nancy 
 
 #3.  Pull the 2nd and 4th elements of the vector you created in step 2.
 ```
