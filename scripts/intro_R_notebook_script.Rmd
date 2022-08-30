@@ -11,28 +11,25 @@ editor_options:
     wrap: 72
 ---
 
-# Intro to R
-
-This R Script will introduce you to scripts, installing and loading
-packages, using tidyverse, keeping R up to date, viewing and changing
-your working directory, and importing data and evaluating data. We will use data
-about Albemarle County homes.
-
-# Goals for our Workshop
+# Intro to R: Goals for our Workshop
 
 These are the goals for today's workshop:
 
 -   Understand the features of R
 -   Know where to look for help and to learn more about R
 -   Orient yourself to R and RStudio
+-   Understand packages, including installing and loading
+-   Learn about working directories and file paths
 -   Understand the basics of working with data: load, explore, and save
     data
--   Learn some best practices for using R scripts, using data, and
+-   Learn best practices for using R scripts and notebooks, using data, and
     projects
 -   Understand the basics of objects, functions, and indexing
 
 The intended audience is beginner-level, with no previous experience
 using R.
+
+We will use data about Albemarle County homes.
 
 # Orientation to R and RStudio
 
@@ -44,9 +41,11 @@ RStudio.
 
 ## A quick tour of RStudio Panes
 
-RStudio shows four panes by default. The two most important are the
-Console (bottom left) and the Script Editor (top left). The panes on the
-right have multiple parts.
+RStudio shows four panes by default. The two most important are the Script 
+Editor (top left) and the Console (bottom left). The panes on the right have 
+multiple parts. The upper right is usually set to Environment, while the lower 
+left has a lot of helper panes and you are likely to frequently switch between 
+them.
 
 ## The Console
 
@@ -59,23 +58,22 @@ Try typing this into the console, and press return:
 
 20^2
 
-# Scripts and R Markdown 
+# Simple Scripts and R Notebooks
 
-Use scripts to save your work for future analysis. Scripts are an
-essential part of reproducibility, either for collaborators, or your
-future self. You should rely on them rather than clicking through a
-graphical user interface.  Reproducibility practices might have a little bit of up-front cost, but I promise it makes your life easier in the long run.
+Scripts save your work for future analysis. Scripts are an essential part
+of reproducibility, either for collaborators or, crucially!, your future self. 
+You should rely on them rather than clicking through a graphical user interface, 
+because scripts save your work process in a way that clicking does not.  
+Reproducibility practices might have a little bit of up-front cost, but I promise it makes your life easier in the long run.
 
-R Scripts are very simple documents. It's a plain text document that
-stores your code. 
-
+## Code-along: Make an R script
 Let's open one now: Go to File...new File...R Script. In the file, enter:
 
 20^2
 20*4
 
 Press *CTRL+Enter* to run a line at a time, or highlight what you want
-to run and press the same keys.  
+to run and press the same keys. 
 
 ## Comments
 
@@ -84,14 +82,54 @@ yourself a favor, and leave comments for the future version of yourself.
 
 Preface comments with a hashtag: `#`
 
+## Code-along: Comment your R script
 Go back to your very simple R script, and include two comments (comment, another
 comment), one each before the two lines of code.
 
-You can also use hashtags to "comment out" parts of your script when you are testing your code.
+You can also use hashtags to "comment out" parts of your script when you are 
+testing your code.
 
-Also notice the gutter (bottom of script pane): you can use four dashes after a comment (-) to organize the script. 
+Also notice the gutter (bottom of script pane): you can use four dashes after a 
+comment (-) to organize the script. 
 
-Now save the document and the next time you need to review your tables or graphs, you will know exactly how you made them.
+Now save the document and the next time you need to review your tables or 
+graphs, you will know exactly how you made them.
+
+## R Notebooks and R Markdown
+
+This file is an R Markdown Notebook. It combines markdown, a plain text 
+formatting syntax, and R code. When you execute R code within the notebook, the 
+output appears beneath the code. 
+
+This file was created in RStudio by going to File...New File...R Notebook.
+
+R code needs to be in "chunks" for it to work in an R Notebook. Below is an 
+example of an R code chunk. It makes a parabola using base R graphics (not 
+ggplot2).
+
+Try executing this chunk by clicking the *Run* button (green right-pointing 
+"play" button) within the chunk or by placing your cursor inside the chunk and 
+pressing  *Ctrl+Shift+Enter* (Win/Linux) or *Cmd+Shift+Return* (Mac). 
+
+```{r}
+x <- seq(-1, 1, by = 0.01)
+y <- x^2
+plot(x, y, type = "l")
+```
+
+To hide the output, click the Expand/Collapse output button. To clear results 
+(or an error), click the "x". 
+
+You can also press *Ctrl+Enter* (Win/Linux) or *Cmd+Return* (Mac) to run one 
+line of code at a time (instead of the entire chunk).
+
+Add a new R code chunk by clicking the *Insert Chunk* button on the toolbar or 
+by pressing *Ctrl+Alt+I* (Win/Linux) or *Cmd+Option+I* (Mac).  
+
+## Code-along: create and run a code chunk
+
+Insert a new R code chunk below then type and run the code: 22/7
+
 
 # Basic R operations
 
@@ -146,15 +184,18 @@ cottage <- 1000   # Say "cottage gets one thousand"; verify in environment
 (mansion <- 10000)  # putting parenthesis around the call prints the value of `mansion`
 ```
 
-## Mini Code Along
+## Code-along: autocomplete
 
-Take advantage of RStudio autocomplete facility: type the first 3
-letters of cottage, press Tab or Enter, then run.
+Take advantage of RStudio autocomplete facility. Make a code chunk, then type 
+the first 3 letters of cottage, press Tab or Enter, then run.
+
+
 
 ## More objects
 
 I will put parentheses around the code to print to the console/chunk
-output. I am only doing this because it is a workshop situation and I want to display the output. You don't have to do it like this every time.
+output. I am only doing this because it is a workshop situation and I want to 
+display the output. You don't have to do it like this every time.
 
 Use *Ctrl+Enter* (Win/Linux) or *Cmd+Return* (Mac) to run specific lines
 for this next chunk:
@@ -186,13 +227,18 @@ rm(Cottage)       # Remove an object
 Do these exercises in order!
 
 ```{r}
-#1. A cottage costs $100.  Create an object labeled `cottage_cost` that gets the value `100`.  (Do not include the dollar sign.)
+# 1. A cottage costs $100.  Create an object labeled `cottage_cost` that gets the
+# value `100`.  (Do not include the dollar sign.)
 
-#2. How much does the cottage cost in Euros?  Use `cottage_cost`, multiply by `0.8`, and save the object as `cottage_euros`.
+# 2. How much does the cottage cost in Euros?  Use `cottage_cost`, multiply by 
+# `0.8`, and save the object as `cottage_euros`.
 
-#3. Whoops - the cottage is actually $200 - twice what we thought.  Update `cottage_cost` to `200`. Update `cottage_cost` in Question 1 to 200, and run. (Don't run anything else.)
+# 3. Whoops - the cottage is actually $200 - twice what we thought.  Update 
+# `cottage_cost` to `200`. Update `cottage_cost` in Question 1 to 200, and run. 
+# (Don't run anything else.)
 
-#4.  What do you think the current content of the object cottage_euros is? Is it 80 or 160?
+# 4.  What do you think the current content of the object cottage_euros is? 
+# Is it 80 or 160?
 ```
 
 ## Functions
@@ -224,11 +270,8 @@ The default is to round to the nearest whole number. If we want to round
 to more digits, we can get more info on the round() function, by using
 `args(round)` or looking at the help page `?round`
 
-Let's take a quick look at the Examples section for the round() help
-page, and open those examples in a new script.
-
-We see that if we want a different number of digits, we can type
-digits=2, or however many we want.
+From the `round()` documentation, we see that if we want a different number of 
+digits, we can type digits=2, or however many we want.
 
 ```{r}
 round(3.14159, digits = 2)
@@ -241,15 +284,17 @@ you do not have to name them:
 round(3.14159, 2)
 ```
 
-It is good practice to put the non-optional arguments (like the
-number you are rounding) first in your function call, and to specify the
-names of all optional arguments. If you don't, someone reading your code
-might have to look up the definition of a function with unfamiliar
-arguments to understand what you are doing.
+It is up to you if you want to spell out the arguments (e.g., digits = ). You 
+might want to if other people will be reviewing your code and if they are not 
+familiar with the functions you are using.
 
 ## Vectors and Data Types
 
-A vector is the most common and basic data type in R, and is pretty much the workhorse of R. A vector is composed by a series of values, which can be either numbers or characters. We can assign a series of values to a vector using the `c()` function. For example we can create a vector of the age of homes and assign it to a new object `home_age`:
+A vector is the most common and basic data type in R, and is pretty much the 
+workhorse of R. A vector is composed of a series of values, frequently as 
+numbers or characters. We can assign a series of values to a vector using the 
+`c()` (combine) function. For example we can create a vector of the age of homes 
+and assign it to a new object `age`:
 
 Numeric vector:
 
@@ -258,13 +303,17 @@ age <- c(15, 62, 39, 4)
 age
 ```
 
-A vector can also contain characters. For example, we can have a vector of the types of heating in a home (`heating`)
+A vector can also contain characters. For example, we can have a vector of the 
+types of heating in a home (`heating`).
 
 ```{r}
 heating <- c("furnace", "radiator", "heatpump")
 heating
 ```
-The quotes around “furnace”, etc. are essential here. Without the quotes R will assume there are objects called `furnace`, `radiator`, and `heatpump`. As these objects don’t exist in R’s memory, there will be an error message.
+
+The quotes around “furnace”, etc. are essential here. Without the quotes R will
+assume there are objects called `furnace`, `radiator`, and `heatpump`. As these 
+objects don’t exist in R’s memory, there will be an error message.
 
 Character vector missing the quotes:
 
@@ -272,7 +321,8 @@ Character vector missing the quotes:
 heating <- c(furnace, radiator, heatpump) # These objects do not exist, so you get an error
 ```
 
-There are many functions that allow you to inspect the content of a vector. length() tells you how many elements are in a particular vector:
+There are many functions that allow you to inspect the content of a vector. 
+`length()` tells you how many elements are in a particular vector:
 ```{r}
 length(age)
 ```
@@ -306,16 +356,13 @@ Another common way of subsetting is by using a logical vector.
 ```{r}
 age > 30
 ```
-```{r}
-age[age > 30]
-```
 
 ## Your turn \#2
 
 ```{r}
 #1.  Pull the second element from the numeric vector age (above).
 
-#2.  Create a character vector of first names consisting of 4 components: Jenn, Clay, Jacob, and Nancy 
+#2.  Create a character vector `names` consisting of 4 components: Jenn, Clay, Jacob, and Nancy 
 
 #3.  Pull the 2nd and 4th elements of the vector you created in step 2.
 ```
@@ -330,7 +377,7 @@ icon in the Environment console.
 rm(list = ls())
 ```
 
-# Starting with Data
+# Starting with Data: Paths and Import
 
 ## What is a Working Directory? What is the best way to set one?
 
@@ -357,25 +404,61 @@ You might want to change the working directory. For that you have to
 
 ## An example using a hard coded working directory
 
-Here is an example of setting your working directory using `setwd()`.
+Here is an example of setting your working directory using the `setwd()` 
+function.
 
 `setwd("C:/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R")`
 
-Note that this line of code will not work for you. It works for me,
-right now, on this computer. If I ever move my files, that line will
-stop working for me, too.
+Note that this line of code will *not* work for you. Actually, this line of code
+doesn't even work for me anymore - I moved my files, so this hardcoded working
+directory line is no longer correct, so it doesn't work now.
 
 There is a better way: RStudio Projects.
 
 ## Create a RStudio Project
 
+RStudio Projects are great because they automatically set your working
+directory to the top level of your project directory (folder). They also
+give you a fresh "environment" which we will explain in a moment.
+
+## Follow-along: create a R Project
 Create a project by selecting the R Project icon (upper right corner) or
 File...New Project...Existing Directory...select the directory (folder)
 where this R Notebook is saved.
 
-RStudio Projects are great because they automatically set your working
-directory to the top level of your project directory (folder). They also
-give you a fresh "environment" which we will explain in a moment.
+# Import homes data: Absolute vs. Relative Paths
+
+We will use real data about homes in Albemarle County. But how do we import it?
+
+We need to point R to where the dataset is stored. Recall what we said
+about setting the working directory with hard-coded paths: they break
+when you move your files, and basically never work for other people.
+
+A hard-coded path pointing to our dataset in Windows could look like
+this:
+`C:/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2022.csv`
+
+On a Mac it could look like this:
+`~/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2022.csv`
+
+Instead of using a hard-coded path, we will use a *relative* path. That
+means that we start from the working directory and move around from
+there.
+
+```{r}
+#read in data
+homes <- read_csv('../data-raw/albemarle_homes_2022.csv') 
+```
+
+## Important side note about relative paths in R Notebooks
+Note that the working directory for R code chunks in R Notebooks is the 
+directory (aka folder) that contains the R Notebook (.Rmd) file. In this case, that folder is the `scripts` directory/folder.
+
+If we were using a plain R script in the same `scripts` folder, the code above
+would look like `homes <- read_csv('data-raw/albemarle_homes_2022.csv')`,
+because the working directory would be set to one level higher, at the `getting-started-R` folder.
+
+Use `..` (two periods) to move from the `scripts` folder up to the `getting-started-R` folder. From there, R can find the `data-raw` folder.
 
 # Loading packages, reading conflicts
 
@@ -383,14 +466,14 @@ We need more verbs! R comes pre-loaded with several packages, but one of
 the cool things about R is that people develop new functions all the
 time. Those functions are distributed in packages. CRAN is the best
 place to find packages because they are validated. You can also find
-package on GitHub, but "buyer beware" - these might not work or might
+packages on GitHub, but "buyer beware" - these might not work or might
 not have been updated to keep pace with new versions of R.
 
 Let's load a package.
 
 Recall that you installed the tidyverse package before the workshop.
 Remember, you only *install* a package once, but you must *load* it for
-every \# new R session. Think of it like a lightbulb that you install
+every new R session. Think of it like a lightbulb that you install
 once, but switch on every time you need it.
 
 Let's load our first package: tidyverse
@@ -416,40 +499,14 @@ error you need to fix.
 ## What is an Environment?
 
 Your environment includes your objects saved into memory and any loaded 
-librarys.RStudio Projects give you a fresh "environment." That basically clears 
-your workspace by removing any objects, and also clears any libraries that you 
+packages. RStudio Projects give you a fresh "environment." That basically clears 
+your workspace by removing any objects, and also clears any packages that you 
 may have loaded previously.
 
 It's a good practice to start, and frequently re-start, with a fresh
 environment.
 
-# Import homes data - Our First Data Frame
-
-We will use real data about homes in Albemarle County. 
-
-## Relative Paths
-
-We need to point R to where the dataset is stored. Recall what we said
-about setting the working directory with hard-coded paths: they break
-too easily and are just annoying when they do.
-
-A hard-coded path pointing to our dataset in Windows could look like
-this:
-`C:/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2022.csv`
-
-On a Mac it could look like this:
-`~/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2022.csv`
-
-Instead of using a hard-coded path, we will use a *relative* path. That
-means that we start from the working directory and move around from
-there.
-
-```{r}
-#read in data
-homes <- read_csv('data-raw/albemarle_homes_2022.csv') 
-```
-
-## Evaluate Data, Part 1
+# Evaluate Data, Part 1
 
 Get an overall view:
 
@@ -514,11 +571,9 @@ Type: glimpse...open parenthesis...homes
 ## Factors: categorical data
 
 Notice in our summary() and str() print outs, we see a lot of data that
-looks numeric, but is not really numeric. It's categorical. Let's focus
-on `sex`. Here, we have two categories: males and female. Males are
-coded as 1 and females are coded as 2. The output says that the mean is
-1.384, but really, it doesn't make any sense to have a mean of sex. We
-should convert those numeric variables into categorical ones.
+looks like character data, but is not really character. It's categorical. 
+Let's focus on `condition`. Here, we have a handful of categories: average, very
+poor, fair, etc. We should convert those numeric variables into categorical ones.
 
 In R, categorical data are called factors. Factors are a class of data,
 just like numeric or character data.
@@ -526,18 +581,17 @@ just like numeric or character data.
 Here is a quick (lazy!) way of importing all character (string) data as factors:
 
 ```{r}
-
 # set up factors ---------------------------------------------------------------
-homes_factors <- read.csv("data-raw/albemarle_homes_2022.csv", stringsAsFactors = TRUE)
+homes_factors <- read.csv("../data-raw/albemarle_homes_2022.csv", stringsAsFactors = TRUE)
 str(homes_factors)
 ```
 
-Compare str(homes) and str(homes_factor).  The character data in 'homes' are now Factors with Levels. Looking at 'hsdistrict' again, it shows "Factor w/ 4 levels". Also notice the numbers that follow. Factors are stored in memory as integers, and the integers have associated "labels". 
+Compare str(homes) and str(homes_factor).  The character data in 'homes_factor' are now Factors with Levels. Looking at 'condition' again, it shows "Factor w/ 7 levels". Also notice the numbers that follow. Factors are stored in memory as integers, and the integers have associated "labels". 
 
-Investigate factors for high school district:
+Investigate factors for condition:
 
 ```{r}
-levels(homes_factors$hsdistrict)
+levels(homes_factors$condition)
 ```
 
 Check out tidyverse's forcats package for more details on how to manage factors.
@@ -594,7 +648,7 @@ table(homes$hsdistrict, homes$cooling)
 Missing data is represented by NA.
 
 ```{r}
-sum(is.na(homes$bedroom)) # there is 1 observation with missing bedroom data.
+sum(is.na(homes$bedroom)) # number of observations with missing bedroom data.
 ```
 
 Many functions will return NA if the data include missing values.
@@ -611,9 +665,11 @@ mean(homes$bedroom, na.rm = TRUE)
 
 ## Your Turn \#3
 
-1.  Print the last 8 lines of `homes`
+1.  Print the last rows of the `homes` dataframe with the `tail()` function. Can
+you print the last 10 lines of rows?
 
-2.  Use the function median() to calculate the median of the number of full baths (fullbath) in 'homes'
+2.  Use the function median() to calculate the median of the number of full 
+baths (fullbath) in 'homes'
 
 3. Create a table that includes middle school district (msdistrict) as rows, 
 and condition as columns.
@@ -645,22 +701,23 @@ ggplot(homes, aes(x = totalvalue)) +
 # save your questions for the data viz workshop!
 ```
 
-In the Files pane (lower right), verify that the folder displays your
-working directory...click on "New Folder"...create a new folder
-called...output. (The new folder might not be visible in the Files pane
-right away.)
+In the Files pane (lower right quadrant in R Studio), verify that the folder 
+displays your working directory (`getting-started-R`)...click on "New 
+Folder" (icon that looks like a folder with a plus sign)...create a new folder
+called...output. (The new folder might not be visible in the Files pane right away.)
 
 ```{r}
 # save figure 
-ggsave("output/total_value.png")
+ggsave("../output/total_value.png")
 ```
+Verify the image file saved in `output` by clicking on that folder.
 
 **Save our data**
 
-Let's save our data now.
+Let's save our data as a .Rds file, so we can import the data again later.
 
-(I admit, this isn't a perfect example, since we didn't really make any changes
-to the raw dataset.  We might as well use our homes_factors since we took the 
+(I admit, this isn't a perfect example, since we didn't make a lot of 
+changes to the raw dataset.  We will use our homes_factors since we took the 
 time to convert the strings to factors.)
 
 In the Files pane (lower right), verify that the folder displays your
@@ -670,7 +727,7 @@ Files pane right away.)
 
 ```{r}
 # Save your homes_factors object as an Rds file.
-saveRDS(homes_factors, file = "data-processed/homes_factors.Rds")
+saveRDS(homes_factors, file = "../data-processed/homes_factors.Rds")
 ```
 
 ## Keeping R up to date
@@ -680,7 +737,7 @@ we hopefully didn't encounter any issues with old versions today. But
 eventually, you will have to update R.
 
 Remember that at the top of the Console, you will see session info, e.g.
-R version 4.1.1 (2021-08-10) -- "Kick Things"
+R version 4.2.1 (2021-08-10) -- "Funny-Looking Kid"
 
 This tells us what version of R that RStudio is using.
 
@@ -709,5 +766,8 @@ tidyverse): Tools...Check for Package Updates.
 It is a good idea to occasionally check for RStudio updates:
 Help...Check for Updates.
 
-# Assessment
-Assessment: https://virginia.libwizard.com/f/data-literacy
+# Keep learning 
+
+- Come to our other UVA Library Research Data Services R workshops https://data.library.virginia.edu/training/#R or a workshop offered by UVA Health Science Library: https://cal.hsl.virginia.edu/calendar/data?cid=5619&t=g&d=0000-00-00&cal=5619&ct=29775&inc=0
+- Reach out to our StatLab for one-on-one consultation or visit drop-in hours (TBD): https://data.library.virginia.edu/statlab/ 
+- For self-led learning, check out SAGE Campus's Introduction to R, a beginner-level, 20 hour course. http://proxy01.its.virginia.edu/login?url=https://classroom.sagepub.com/ 
