@@ -30,7 +30,7 @@ You need the most current version of R, and three packages: dplyr, readr, and kn
 
 This workshop will teach you the basics of getting started with R.  The [answers](https://jennhuck.github.io/workshops/dplyr_answers.html) to the workshop exercises are available.
 
-dplyr workshop project directory:
+Workshop project directory:
 
 +-- data-raw
 
