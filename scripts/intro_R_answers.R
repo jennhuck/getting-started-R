@@ -1,5 +1,5 @@
 # Getting Started with R - workshop answers
-# Fall 2022
+# Spring 2023
 # Jennifer Huck
 # UVA Library
 
@@ -34,7 +34,7 @@ age[2]
 
 # 2. Create a character vector consisting of 4 components. Remember the keyboard
 # shortcut for the assignment <-  operator: ALT+- or OPTION+-
-names <- c("Jenn", "Clay", "Jacob", "Nancy")
+names <- c("Jenn", "Clay", "Jacob", "David")
 
 # 3. Pull the 2nd and 4th elements of the vector you created in step 2.
 names[c(2,4)]

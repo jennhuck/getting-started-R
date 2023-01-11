@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with R"
 author: "Jennifer Huck, Data Librarian, UVA Library"
-date: "Fall 2022"
+date: "Spring 2023"
 output:
   html_document:
     df_print: paged
@@ -64,7 +64,8 @@ Scripts save your work for future analysis. Scripts are an essential part
 of reproducibility, either for collaborators or, crucially!, your future self. 
 You should rely on them rather than clicking through a graphical user interface, 
 because scripts save your work process in a way that clicking does not.  
-Reproducibility practices might have a little bit of up-front cost, but I promise it makes your life easier in the long run.
+Reproducibility practices might have a little bit of up-front cost, but I 
+promise it makes your life easier in the long run.
 
 ## Code-along: Make an R script
 Let's open one now: Go to File...new File...R Script. In the file, enter:
@@ -330,7 +331,8 @@ length(age)
 length(heating)
 ```
 
-An important feature of a vector, is that all of the elements are the same type of data. The function class() indicates the class (the type of element) of an object:
+An important feature of a vector, is that all of the elements are the same type 
+of data. The function class() indicates the class (the type of element) of an object:
 ```{r}
 class(age)
 ```
@@ -362,7 +364,7 @@ age > 30
 ```{r}
 #1.  Pull the second element from the numeric vector age (above).
 
-#2.  Create a character vector `names` consisting of 4 components: Jenn, Clay, Jacob, and Nancy 
+#2.  Create a character vector `names` consisting of 4 components: Jenn, Clay, Jacob, and David 
 
 #3.  Pull the 2nd and 4th elements of the vector you created in step 2.
 ```
@@ -377,7 +379,16 @@ icon in the Environment console.
 rm(list = ls())
 ```
 
-# Starting with Data: Paths and Import
+# Starting with Data: Directories, Paths, and Import
+
+In this section we will cover:
+
+* where R looks for files (working directory),
+* the various ways to set a working directory, including RStudio Projects,
+* how to move around within a directory (relative paths),
+* and how to import data that lives in the cloud.
+
+We are covering all of these topics so we can import our data.
 
 ## What is a Working Directory? What is the best way to set one?
 
@@ -413,6 +424,8 @@ Note that this line of code will *not* work for you. Actually, this line of code
 doesn't even work for me anymore - I moved my files, so this hardcoded working
 directory line is no longer correct, so it doesn't work now.
 
+As much as possible, it is best to avoid setting your working directory this way.
+
 There is a better way: RStudio Projects.
 
 ## Create a RStudio Project
@@ -434,31 +447,55 @@ We need to point R to where the dataset is stored. Recall what we said
 about setting the working directory with hard-coded paths: they break
 when you move your files, and basically never work for other people.
 
-A hard-coded path pointing to our dataset in Windows could look like
-this:
-`C:/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2022.csv`
+A hard-coded path pointing to our dataset in Windows might look like this:
 
-On a Mac it could look like this:
-`~/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2022.csv`
+`C:/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2023.csv`
+
+On a Mac it might look like this:
+
+`~/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2023.csv`
 
 Instead of using a hard-coded path, we will use a *relative* path. That
 means that we start from the working directory and move around from
 there.
 
+**Before** we do this, let's take a quick look at the files we want to use in 
+the file explorer. You can see that the top level folder is `getting-started-R`. 
+That folder contains all the other folders and files for our project. We also 
+have `data-raw` that has our csv file. Then there is `scripts` which contains 
+this script and the answer key. 
+
+I'll repeat: An RStudio Project automatically sets our working directory to the 
+top level of our project directory (folder). In this case, that is the `getting-started-R` directory (folder).
+
 ```{r}
 #read in data
-homes <- read_csv('../data-raw/albemarle_homes_2022.csv') 
+homes <- read_csv('../data-raw/albemarle_homes_2023.csv') 
 ```
 
 ## Important side note about relative paths in R Notebooks
 Note that the working directory for R code chunks in R Notebooks is the 
-directory (aka folder) that contains the R Notebook (.Rmd) file. In this case, that folder is the `scripts` directory/folder.
+directory (aka folder) that contains the R Notebook (.Rmd) file. In this case, 
+that folder is the `scripts` directory/folder.
 
 If we were using a plain R script in the same `scripts` folder, the code above
-would look like `homes <- read_csv('data-raw/albemarle_homes_2022.csv')`,
-because the working directory would be set to one level higher, at the `getting-started-R` folder.
+would look like `homes <- read_csv('data-raw/albemarle_homes_2023.csv')`,
+because the working directory would be set to one level higher, at the 
+`getting-started-R` folder.
 
-Use `..` (two periods) to move from the `scripts` folder up to the `getting-started-R` folder. From there, R can find the `data-raw` folder.
+Use `..` (two periods) to move from the `scripts` folder up to the 
+`getting-started-R` folder. From there, R can find the `data-raw` folder.
+
+## Another way to import data
+If your data lives in the cloud, you can also use URLs to retrieve your data. 
+You do not need to have the data stored locally in order to import it into R's 
+memory.
+
+We can import the 2022 Albemarle homes data directly via a URL. 
+
+```{r}
+homes_2022 <- read.csv("https://github.com/uvastatlab/phdplus2022/raw/main/data/albemarle_homes_2022.csv")
+```
 
 # Loading packages, reading conflicts
 
@@ -582,7 +619,7 @@ Here is a quick (lazy!) way of importing all character (string) data as factors:
 
 ```{r}
 # set up factors ---------------------------------------------------------------
-homes_factors <- read.csv("../data-raw/albemarle_homes_2022.csv", stringsAsFactors = TRUE)
+homes_factors <- read.csv("../data-raw/albemarle_homes_2023.csv", stringsAsFactors = TRUE)
 str(homes_factors)
 ```
 
