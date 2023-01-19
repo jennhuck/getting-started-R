@@ -29,19 +29,3 @@ You need the most current version of R, and three packages: dplyr, readr, and kn
 ## Project goals and description 
 
 This workshop will teach you the basics of getting started with R. 
-
-Workshop project directory:
-
-+-- data-raw
-
-|---\\-- albemarle_homes_2023.csv
-
-+-- scripts
-
-|---+-- intro_R_answers.R
-
-|---\\-- intro_R_notedbook_script.Rmd
-
-\\-- README.md
-
-
