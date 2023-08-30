@@ -38,8 +38,8 @@ Workshop project directory:
 
 +-- scripts
 
-|---+-- intro_R_answers.R
+|---+-- getting_started_R.R
 
-|---\\-- intro_R_notedbook_script.Rmd
+|---\\-- getting_started_R_answers.R
 
 \\-- README.md
