@@ -1,6 +1,6 @@
 # Getting Started with R
 # Jennifer Huck, Data Librarian, UVA Library
-# Spring 2023
+# Fall 2023
 
 # Intro to R: Goals for our Workshop--------------------------------------------
   
@@ -105,8 +105,8 @@
 
 # It is more useful and interesting to assign values to objects. We create
 # an object by using this form: object <- value. Say in your head
-# "object gets value". We are using the assignment operator: <- Use <-
-# and not =.
+# "object gets value". We are using the assignment operator: <- 
+# Use <- and not =.
 # 
 # Tip: Keyboard shortcut: For assignment operator <- use ALT+- (for Windows) or 
 # OPTION+- (for Mac). That is, hold the ALT/OPTION key, then press the - key 
@@ -252,7 +252,7 @@ class(heating)
 
 # R starts counting from 1.
 
-age[c(1,3)]      # pulls 3rd element
+age[3]      # pulls 3rd element
 heating[2:3]   # pulls 2nd-3rd elements
 heating[c(1,3)]    # pulls non-sequential elements
 
@@ -370,7 +370,7 @@ library(tidyverse)
 # Note the message that we see in the Console. You should see what
 # packages were loaded (ggplot2, tibble, etc.) and conflicts. 
 
-# You should also see 2 conflicts:
+# You should see 2 conflicts:
 
 # -   x dplyr::filter() masks stats::filter()
 # -   x dplyr::lag() masks stats::lag()
@@ -685,7 +685,7 @@ ggplot(homes, aes(x = totalvalue)) +
 # Keep learning----------------------------------------------------------------- 
 
 # - Come to our other UVA Library Research Data Services R workshops 
-# https://data.library.virginia.edu/training/#R 
+# https://cal.lib.virginia.edu/calendar/events?cid=4299&t=d&d=0000-00-00&cal=4299&ct=66252&inc=0
 # or a workshop offered by UVA Health Science Library: 
 # https://cal.hsl.virginia.edu/calendar/data?cid=5619&t=g&d=0000-00-00&cal=5619&ct=29775&inc=0
 
