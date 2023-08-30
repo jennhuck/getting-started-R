@@ -4,9 +4,9 @@ These are the project files for the Getting Started with R workshop.
 
 ## Useful dates 
 
-Last updated: 2023-01-10
+Last updated: 2023-08-30
 
-Workshop presentation: 2023-01-12
+Workshop presentation: 2023-08-31
 
 ## Author name and contact info
 
@@ -29,3 +29,17 @@ You need the most current version of R, and three packages: dplyr, readr, and kn
 ## Project goals and description 
 
 This workshop will teach you the basics of getting started with R. 
+
+Workshop project directory:
+
++-- data-raw
+
+|---\\-- albemarle_homes_2023.csv
+
++-- scripts
+
+|---+-- intro_R_answers.R
+
+|---\\-- intro_R_notedbook_script.Rmd
+
+\\-- README.md
