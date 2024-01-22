@@ -1,6 +1,6 @@
 # Getting Started with R
 # Jennifer Huck, Data Librarian, UVA Library
-# Fall 2023
+# Spring 2024
 
 # Intro to R: Goals for our Workshop--------------------------------------------
   
@@ -593,7 +593,7 @@ Mean(homes$landvalue)
 ggplot(homes, aes(x = totalvalue)) +  
   geom_histogram()                     
 
-# (Don't worry about this code! Save your questions for the data viz workshop!)
+# (Don't worry about this code! Just go with it.)
 
 # In the Files pane (lower right quadrant in R Studio), verify that the folder 
 # displays your working directory (`getting-started-R`)...click on "New 
@@ -670,9 +670,16 @@ ggplot(homes, aes(x = totalvalue)) +
 
 # Getting help------------------------------------------------------------------
 
-# We hope that if you need help with R, you come visit someone from the 
-# instructional team at UVA Library or the Health Science Library! If you would 
-# rather get help online, you can absolutely do that at places like 
+# ASK THE LIBRARY
+
+# We hope that if you need help with R, you come visit someone from 
+# UVA Library's StatLab or the Health Science Library! Our stats consultants
+# will help you with your research project's code and statistics. Email us
+# at statlab@virginia.edu
+
+# GET HELP ON FORUMS
+
+# If you would rather get help online, you can absolutely do that at places like 
 # Stack Overflow, GitHub, and community.rstudio.com. Note that "getting a clear, 
 # helpful response on these forums—or from any resource—depends in large part on 
 # asking a clear, helpful question. Help the helpers by including a reprex (a 
@@ -680,7 +687,27 @@ ggplot(homes, aes(x = totalvalue)) +
 
 # Learn how to create a reprex at Jacob Goldstein-Greenwood's StatLab blog post 
 # "Ask Better Code Questions (and Get Better Answers) With Reprex" 
-# (https://data.library.virginia.edu/ask-better-code-questions-and-get-better-answers-with-reprex/).
+# (https://library.virginia.edu/data/articles/ask-better-code-questions-and-get-better-answers-with-reprex).
+
+# ASK CHATGPT
+
+# You can also try using ChatGPT to help troubleshoot errors. Here are two 
+# useful articles that describe how to use ChatGPT to debug R code.
+# How I use ChatGPT for debugging and troubleshooting R code by Ulrik Daae
+# (https://ulrikdaae.medium.com/how-i-use-chatgpt-for-debugging-and-troubleshooting-r-code-ae8f99cae10f)
+# and
+# Debugging and Improving Code with ChatGPT by Dan MacLean
+# (https://www.packtpub.com/article-hub/debugging-and-improving-code-with-chatgpt).
+# The essential elements are to (1) ask ChatGPT to screen your code for errors, 
+# (2) copy and paste your code, and (3) include which packages you are using. 
+# You will likely have to prompt ChatGPT multiple times to arrive at a solution.
+# Importantly, ChatGPT will not correct flaws in logic or assumptions unless 
+# asked. Logical correctness and code applicability is up to you, the programmer.
+# Additionally, be prepared to provide small or built-in datasets (e.g., mtcars) 
+# as a dataframe to go with your code. I recommend NOT pasting in sensitive data
+# (e.g., HIPAA, FERPA, sensitive business data, data with names or identifiers, 
+# etc.). ChatGPT learns from the data it ingests, so you have to assume it will
+# save whatever you paste into it (and potentially share with the next person).
 
 # Keep learning----------------------------------------------------------------- 
 
@@ -690,6 +717,6 @@ ggplot(homes, aes(x = totalvalue)) +
 # https://cal.hsl.virginia.edu/calendar/data?cid=5619&t=g&d=0000-00-00&cal=5619&ct=29775&inc=0
 
 # - Reach out to our StatLab for one-on-one consultation or visit drop-in hours: 
-# https://data.library.virginia.edu/statlab/ 
+# https://library.virginia.edu/data/statlab
 
-# - For self-led learning, check out SAGE Campus's Introduction to R, a beginner-level, 20 hour course. http://proxy01.its.virginia.edu/login?url=https://classroom.sagepub.com/ 
+# - For self-led learning, check out SAGE Campus's Introduction to R, a beginner-level, 20 hour course. https://proxy1.library.virginia.edu/login?url=https://classroom.sagepub.com/ 
