@@ -32,12 +32,14 @@ cottage_cost <- 200
 # 1. Pull the second element from the numeric vector age (above).
 age[2]
 
-# 2. Create a character vector consisting of 4 components. Remember the keyboard
-# shortcut for the assignment <-  operator: ALT+- or OPTION+-
-names <- c("Jenn", "Clay", "Jacob", "David")
+#2.  Create a character vector `counties` consisting of 4 components: Albemarle, 
+# Charlottesville, Nelson, and Greene. 
+# Remember the keyboard shortcut for the assignment <-  operator: 
+# ALT+- (Windows) or OPTION+- (Mac)
+counties <- c("Albemarle", "Charlottesville", "Nelson", "Greene")
 
 # 3. Pull the 2nd and 4th elements of the vector you created in step 2.
-names[c(2,4)]
+counties[c(2,4)]
 
 # Your Turn #3------------------------------------------------------------------
 

@@ -200,8 +200,7 @@ round(3.14159)
 
 ?round
 
-# From the round() documentation, we see that if we want a different number of 
-# digits, we can type digits=2, or however many we want.
+# From the round() documentation, we see that if we want to round to two digits, # we can type digits=2.
 
 round(3.14159, digits = 2)
 
@@ -266,7 +265,10 @@ age > 30
 #1.  Pull the second element from the numeric vector age (above).
 
 
-#2.  Create a character vector `names` consisting of 4 components: Jenn, Clay, Jacob, and David 
+#2.  Create a character vector `counties` consisting of 4 components: Albemarle, 
+# Charlottesville, Nelson, and Greene. 
+# Remember the keyboard shortcut for the assignment <-  operator: 
+# ALT+- (Windows) or OPTION+- (Mac)
 
 
 #3.  Pull the 2nd and 4th elements of the vector you created in step 2.
@@ -407,7 +409,7 @@ library(tidyverse)
 # our project. We also have `data-raw` that has our csv file. Then there is 
 # `scripts` which contains this script and the answer key. 
 
-# I'll repeat: An RStudio Project automatically sets our working directory to the 
+# I'll repeat: An RStudio Project automatically sets our working directory to the
 # top level of our project directory (folder). In this case, that is the 
 # `getting-started-R` directory (folder).
 
