@@ -149,9 +149,9 @@ two_homes <- cottage + mansion  # Save our arithmetic as a new object
 
 rm(Cottage)       # Remove an object
 
-# Now type Cottage into the console.
+# Now run Cottage again.
+Cottage
 # We get an error, because the object no longer exists
-
 
 ## Your turn 1----
 
