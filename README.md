@@ -4,9 +4,9 @@ These are the project files for the Getting Started with R workshop.
 
 ## Useful dates 
 
-Last updated: 2024-01-22
+Last updated: 2024-08-29
 
-Workshop presentation: 2024-01-25
+Workshop presentation: 2024-09-05
 
 ## Author name and contact info
 
