@@ -175,7 +175,7 @@ Cottage
 
 # Functions---------------------------------------------------------------------
 
-# Functions are like verbs. Objects are like nouns. Functions allow you to
+# If objects are the nouns of R, Functions are the verbs. Functions allow you to
 # do things with your objects.
 # 
 # Functions get one or more inputs called arguments. Functions often
