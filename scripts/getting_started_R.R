@@ -1,6 +1,6 @@
 # Getting Started with R
 # Jennifer Huck, Data Librarian, UVA Library
-# Spring 2024
+# Fall 2024
 
 # Intro to R: Goals for our Workshop--------------------------------------------
   
@@ -20,7 +20,7 @@
 # The intended audience is beginner-level, with no previous experience
 # using R.
 # 
-# We will use data about Albemarle County homes.
+# We will use data about homes in Albemarle County.
 
 
 # Orientation to R and RStudio--------------------------------------------------
@@ -44,7 +44,7 @@
 # The Console is where you can enter commands that R will execute, but R
 # will not save this code in an organized way. You might want to use the
 # console to enter commands that you want to test out or commands that you
-# know you do not want to save.
+# know you do not need to save.
 # 
 # Try typing this into the console, and press return:
 # 
@@ -55,7 +55,7 @@
 
 # Scripts save your work for future analysis. Scripts are an essential part
 # of reproducibility, either for collaborators or, crucially!, your future self. 
-# You should rely on them rather than clicking through a graphical user interface, 
+# It is better to rely on them rather than clicking through a graphical user interface, 
 # because scripts save your work process in a way that clicking does not.  
 # Reproducibility practices might have a little bit of up-front cost, but I 
 # promise it makes your life easier in the long run.
