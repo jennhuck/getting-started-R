@@ -682,7 +682,7 @@ ggplot(homes, aes(x = totalvalue)) +
 # GET HELP ON FORUMS
 
 # If you would rather get help online, you can absolutely do that at places like 
-# Stack Overflow, GitHub, and community.rstudio.com. Note that "getting a clear, 
+# Stack Overflow, GitHub, and https://forum.posit.co/. Note that "getting a clear, 
 # helpful response on these forums—or from any resource—depends in large part on 
 # asking a clear, helpful question. Help the helpers by including a reprex (a 
 # REPRoducible *EXample) when asking a code question." 
@@ -693,11 +693,9 @@ ggplot(homes, aes(x = totalvalue)) +
 
 # ASK CHATGPT
 
-# You can also try using ChatGPT to help troubleshoot errors. Here are two 
-# useful articles that describe how to use ChatGPT to debug R code.
-# How I use ChatGPT for debugging and troubleshooting R code by Ulrik Daae
-# (https://ulrikdaae.medium.com/how-i-use-chatgpt-for-debugging-and-troubleshooting-r-code-ae8f99cae10f)
-# and
+# You can also try using ChatGPT or MS CoPilot Chat (https://in.virginia.edu/genai) 
+# to help troubleshoot errors. Here is a useful article that describes how to 
+# use ChatGPT to debug R code:
 # Debugging and Improving Code with ChatGPT by Dan MacLean
 # (https://www.packtpub.com/article-hub/debugging-and-improving-code-with-chatgpt).
 # The essential elements are to (1) ask ChatGPT to screen your code for errors, 
