@@ -1,5 +1,5 @@
 # Getting Started with R - workshop answers
-# Fall 2024
+# Spring 2025
 # Jennifer Huck
 # UVA Library
 
@@ -43,8 +43,8 @@ counties[c(2,4)]
 
 # Your Turn #3------------------------------------------------------------------
 
-# 1. Print the last 8 lines of 'homes'
-tail(homes, 8)
+# 1. Print the last 10 lines of 'homes'
+tail(homes, 10)
 
 # 2. Use the function median() to calculate the median of the number of full 
 # baths (fullbath) in 'homes'
@@ -56,4 +56,4 @@ table(homes$msdistrict, homes$condition)
 
 # 4. Fix these commands so they run correctly:
 median(homes$bedroom, na.rm = TRUE)
-mean(homes$landvalue)
+mean(homes$totalvalue)

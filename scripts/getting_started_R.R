@@ -1,8 +1,8 @@
 # Getting Started with R
 # Jennifer Huck, Data Librarian, UVA Library
-# Fall 2024
+# Spring 2025
 
-# Intro to R: Goals for our Workshop--------------------------------------------
+# Getting Started with R: Goals for our Workshop--------------------------------------------
   
 # These are the goals for today's workshop:
 
@@ -55,9 +55,9 @@
 
 # Scripts save your work for future analysis. Scripts are an essential part
 # of reproducibility, either for collaborators or, crucially!, your future self. 
-# It is better to rely on them rather than clicking through a graphical user interface, 
-# because scripts save your work process in a way that clicking does not.  
-# Reproducibility practices might have a little bit of up-front cost, but I 
+# It is better to rely on them rather than clicking through a graphical user 
+# interface, because scripts save your work process in a way that clicking does 
+# not. Reproducibility practices might have a little bit of up-front cost, but I 
 # promise it makes your life easier in the long run.
 # 
 # You should use lots of comments when you write your own scripts! Do
@@ -96,14 +96,14 @@
 # Notice that the Console shows a > (right-pointing carrot) when it is ready to 
 # accept commands. 
 
-#This time, try highlighting and running only (2+8 above, intentionally leaving 
+# This time, try highlighting and running only (2+8 above, intentionally leaving 
 # out )/2. You will see a + (plus sign) in the console. The + tells you R is 
 # waiting for more input. You can click into the console and press ESC, or you 
 # can highlight and run the rest of the line.
 
 # Creating objects-------------------------------------------------------------
 
-# It is more useful and interesting to assign values to objects. We create
+# R is more useful and interesting when we assign values to objects. We create
 # an object by using this form: object <- value. Say in your head
 # "object gets value". We are using the assignment operator: <- 
 # Use <- and not =.
@@ -125,11 +125,7 @@ house <- 500
 # the first 3 letters of cottage, press Tab or Enter, then run.
 
 
-## More objects----
-
-# I will put parentheses around the code to print to the console/chunk
-# output. I am only doing this because it is a workshop situation and I want to 
-# display the output. You don't have to do it like this every time.
+## More about objects----
 
 # Use *Ctrl+Enter* (Win/Linux) or *Cmd+Return* (Mac) to run lines:
 
@@ -151,6 +147,7 @@ rm(Cottage)       # Remove an object
 
 # Now run Cottage again.
 Cottage
+
 # We get an error, because the object no longer exists
 
 ## Your turn 1----
@@ -162,7 +159,7 @@ Cottage
 
 
 # 2. How much does the cottage cost in Euros?  Use `cottage_cost`, multiply by 
-# `0.8`, and save the object as `cottage_euros`.
+# `0.96`, and save the object as `cottage_euros`.
 
 
 # 3. Whoops - the cottage is actually $200 - twice what we thought.  Update 
@@ -255,8 +252,13 @@ age[3]      # pulls 3rd element
 heating[2:3]   # pulls 2nd-3rd elements
 heating[c(1,3)]    # pulls non-sequential elements
 
-## Conditional subsetting----
-# Another common way of subsetting is by using a logical vector.
+## Logical vectors and conditional subsetting----
+
+# Another type of vector is a logical vector. The values it can have are TRUE,
+# FALSE, or NA. It is not common to see this in your raw data set, but it is 
+# common to create them when analyzing your data.
+
+# We can use logical vectors to do conditional subsetting.
 
 age > 30
 
@@ -291,7 +293,7 @@ rm(list = ls())
 # * how to move around within a directory (relative paths),
 # * and how to import data that lives in the cloud.
  
-# We are covering all of these topics so we can import our data.
+# We are covering all of these topics so we can bring our data into R.
 
 ## What is a Working Directory? What is the best way to set one?----
 
@@ -336,9 +338,9 @@ setwd("C:/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R")
 # directory to the top level of your project directory (folder). They also
 # give you a fresh "environment" which we will explain in a moment.
 
-## Follow-along: create a R Project----
+## Follow-along: create a RStudio Project----
 
-# Create a project by selecting the R Project icon (upper right corner) or
+# Create a project by selecting the RStudio Project icon (upper right corner) or
 # File...New Project...Existing Directory...select the directory (folder)
 # where this R script is saved. 
 
@@ -393,11 +395,11 @@ library(tidyverse)
 
 # A hard-coded path pointing to our dataset in Windows might look like this:
 
-# C:/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2023.csv
+# C:/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2025-01-08.csv
 
 # On a Mac it might look like this:
 
-# ~/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2023.csv
+# ~/Users/jah2ax.ESERVICES/Box Sync/_R/workshops/intro_R/data-raw/albemarle_homes_2025-01-08.csv
 
 # Instead of using a hard-coded path, we will use a *relative* path. That
 # means that we start from the working directory and move around from
@@ -413,8 +415,15 @@ library(tidyverse)
 # top level of our project directory (folder). In this case, that is the 
 # `getting-started-R` directory (folder).
 
+# Remember you can verify your working directory:
+getwd()
+
+# R is looking for files starting from the "getting-started-R" directory. We can
+# ask it to look for files from that starting point. Let's look for our CSV file
+# by looking in the "data-raw" sub-directory (aka folder).
+
 # Read in data
-homes <- read_csv('data-raw/albemarle_homes_2023.csv') 
+homes <- read_csv('data-raw/albemarle_homes_2025-01-08.csv') 
 
 ## Another way to import data----
 # If your data lives in the cloud, you can also use URLs to retrieve your data. 
@@ -439,7 +448,7 @@ homes_2022 <- read.csv("https://github.com/uvastatlab/phdplus2022/raw/main/data/
 # Get an overall view:
 
 homes        # print to console
-View(homes)  # view spreadsheet-style data viewer
+View(homes)  # view spreadsheet-style data viewer (scroll sideways to see more)
              # You can also click on "homes" in your Environment pane
 
 # Size:
@@ -494,7 +503,7 @@ dim(homes)   # number of rows and number of columns (the DIMensions of the objec
 # Here is a quick (lazy!) way of importing all character (string) data as factors:
 
 # set up factors
-homes_factors <- read.csv("data-raw/albemarle_homes_2023.csv", stringsAsFactors = TRUE)
+homes_factors <- read.csv("data-raw/albemarle_homes_2025-01-08.csv", stringsAsFactors = TRUE)
 str(homes_factors)
 
 # Compare str(homes) and str(homes_factor).  The character data in 'homes_factors' 
@@ -529,8 +538,8 @@ sum(homes$totalvalue > 1e6) # 1e6 is fast way of writing 1,000,000
                             # (i.e., 1 followed by 6 zeros) in R
 
 # For each observation, if the total value is over $1,000,000, R considers that 
-# TRUE, which is stored as a 1.  Then R sums up all those 1's with the sum() 
-# function.) 
+# TRUE, which is stored as a 1. FALSE is stored as 0.  R sums up all those 1's 
+# and 0's with the sum() function.) 
 
 # proportion of homes over $1,000,000 (mean of 0s and 1s as a proportion of 1s)
 mean(homes$totalvalue > 1e6)
@@ -551,15 +560,15 @@ table(homes$hsdistrict, homes$cooling)
 
 # Missing data is represented by NA.
 
-sum(is.na(homes$bedroom)) # number of observations with missing bedroom data.
+sum(is.na(homes$lastsaleprice)) # number of observations with missing bedroom data.
 
 # Many functions will return NA if the data include missing values.
 
-mean(homes$bedroom)
+mean(homes$lastsaleprice)
 
 # You can add the argument `na.rm = TRUE` to ignore missing values.
 
-mean(homes$bedroom, na.rm = TRUE)
+mean(homes$lastsaleprice, na.rm = TRUE)
 
 ## Your Turn 3----
 
@@ -577,7 +586,7 @@ mean(homes$bedroom, na.rm = TRUE)
 
 # 4.  Fix these commands so they run correctly:
 median(homes$Bedrooms, na.rm = TRUE)
-Mean(homes$landvalue)
+Mean(homes$totalvalue)
 
 # Filling out our Project Directory---------------------------------------------
 
@@ -657,11 +666,12 @@ saveRDS(homes_factors, file = "data-processed/homes_factors.Rds")
 # Use `..` (two periods) to move from the `scripts` folder up to the 
 # `getting-started-R` folder. From there, R can find the `data-raw` folder.
 
-# Copy and paste the following 6 lines of code into a code chunk in the R Notebook:
+# Copy and paste the following 7 lines of code into a code chunk in the R Notebook:
 
+#load libaries
+library(tidyverse)
 # import data
-homes <- read_csv('../data-raw/albemarle_homes_2023.csv') 
-
+homes <- read_csv('../data-raw/albemarle_homes_2025-01-08.csv') 
 # visualize totalvalue
 ggplot(homes, aes(x = totalvalue)) +  
   geom_histogram()
@@ -687,7 +697,7 @@ ggplot(homes, aes(x = totalvalue)) +
 # asking a clear, helpful question. Help the helpers by including a reprex (a 
 # REPRoducible *EXample) when asking a code question." 
 
-# Learn how to create a reprex at Jacob Goldstein-Greenwood's StatLab blog post 
+# Learn how to create a reprex at our StatLab blog post 
 # "Ask Better Code Questions (and Get Better Answers) With Reprex" 
 # (https://library.virginia.edu/data/articles/ask-better-code-questions-and-get-better-answers-with-reprex).
 

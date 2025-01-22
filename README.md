@@ -4,9 +4,9 @@ These are the project files for the Getting Started with R workshop.
 
 ## Useful dates 
 
-Last updated: 2024-08-29
+Last updated: 2025-01-21
 
-Workshop presentation: 2024-09-05
+Workshop presentation: 2025-01-23
 
 ## Author name and contact info
 
@@ -38,7 +38,7 @@ Workshop project directory:
 
 +-- data-raw
 
-|---\\-- albemarle_homes_2023.csv
+|---\\-- albemarle_homes_2025-01-08.csv
 
 +-- scripts
 
