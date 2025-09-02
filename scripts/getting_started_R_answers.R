@@ -1,5 +1,5 @@
 # Getting Started with R - workshop answers
-# Spring 2025
+# Fall 2025
 # Jennifer Huck
 # UVA Library
 
@@ -14,17 +14,17 @@
 cottage_cost <- 100
 
 # 2. How much does the cottage cost in Euros?  Use cottage_cost, 
-# multiply by 0.8, and save the object as cottage_euros.
-cottage_euros <- cottage_cost * 0.8
+# multiply by 0.86, and save the object as cottage_euros.
+cottage_euros <- cottage_cost * 0.86
 
 # 3. Whoops - the cottage is actually $200 - twice what we thought.  
 # Update cottage_cost to 200.
 cottage_cost <- 200
 
-# 4. What do you think the current content of the object cottage_euros is? 
-# Is it 80 or 160?
+# 4. 4.  Without looking, What do you think the current content of the object 
+# cottage_euros is?
 
-# It is still 80, because even though we updated cottage_cost, we did not update 
+# It is still 86, because even though we updated cottage_cost, we did not update 
 # cottage_euros calculation.
 
 # Your turn #2------------------------------------------------------------------
@@ -43,17 +43,14 @@ counties[c(2,4)]
 
 # Your Turn #3------------------------------------------------------------------
 
-# 1. Print the last 10 lines of 'homes'
-tail(homes, 10)
-
-# 2. Use the function median() to calculate the median of the number of full 
+# 1. Use the function median() to calculate the median of the number of full 
 # baths (fullbath) in 'homes'
-median(homes$fullbath, na.rm = TRUE)
+median(homes$fullbath)
 
-# 3. Create a table that includes middle school district (msdistrict) as rows, 
+# 2. Create a table that includes middle school district (msdistrict) as rows, 
 # and condition as columns.
 table(homes$msdistrict, homes$condition)
 
-# 4. Fix these commands so they run correctly:
+# 3. Fix these commands so they run correctly:
 median(homes$bedroom, na.rm = TRUE)
 mean(homes$totalvalue)

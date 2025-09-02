@@ -1,6 +1,6 @@
 # Getting Started with R
 # Jennifer Huck, Data Librarian, UVA Library
-# Spring 2025
+# Fall 2025
 
 # Getting Started with R: Goals for our Workshop--------------------------------------------
   
@@ -22,6 +22,18 @@
 # 
 # We will use data about homes in Albemarle County.
 
+
+# A quick note about RStudio and Positron---------------------------------------
+
+# The company that makes the open-source software RStudio recently launched a 
+# "next-generation" coding software called Positron. The primary difference 
+# between RStudio and Positron is that RStudio was designed primarily for R, 
+# while Positron was designed from the ground up for R and Python together. 
+# Positron is still quite new, and RStudio will remain supported for the 
+# foreseeable future. For those reasons, we will continue to use RStudio in this 
+# workshop, but you might be hearing more about Positron in the future.
+
+# https://posit.co/blog/positron-product-announcement-aug-2025/
 
 # Orientation to R and RStudio--------------------------------------------------
 
@@ -159,15 +171,15 @@ Cottage
 
 
 # 2. How much does the cottage cost in Euros?  Use `cottage_cost`, multiply by 
-# `0.96`, and save the object as `cottage_euros`.
+# `0.86`, and save the object as `cottage_euros`.
 
 
 # 3. Whoops - the cottage is actually $200 - twice what we thought.  Update 
 # `cottage_cost` to `200`. Update `cottage_cost` in Question 1 to 200, and run. 
 # (Don't run anything else.)
 
-# 4.  What do you think the current content of the object cottage_euros is? 
-# Is it 80 or 160?
+# 4.  Without looking, What do you think the current content of the object 
+# cottage_euros is?
 
 
 # Functions---------------------------------------------------------------------
@@ -484,7 +496,7 @@ dim(homes)   # number of rows and number of columns (the DIMensions of the objec
 # 
 # `glimpse()`: Returns the number of columns and rows of the tibble, the
 # names and class of each column, and previews as many values will fit on
-# the screen. glimpse() is from the dplyr or tibble package, while
+# the screen. glimpse() is from the dplyr or tibble package of Tidyverse, while
 # everything else in this section is from base R.
 
 # Type: glimpse...open parenthesis...homes
@@ -572,19 +584,15 @@ mean(homes$lastsaleprice, na.rm = TRUE)
 
 ## Your Turn 3----
 
-# 1.  Print the last rows of the `homes` dataframe with the `tail()` function. 
-# Can you print the last 10 lines of rows?
-
-
-# 2.  Use the function median() to calculate the median of the number of full 
+# 1.  Use the function median() to calculate the median of the number of full 
 # baths (fullbath) in 'homes'
 
 
-# 3. Create a table that includes middle school district (msdistrict) as rows, 
+# 2. Create a table that includes middle school district (msdistrict) as rows, 
 # and condition as columns.
 
 
-# 4.  Fix these commands so they run correctly:
+# 3.  Fix these commands so they run correctly:
 median(homes$Bedrooms, na.rm = TRUE)
 Mean(homes$totalvalue)
 
@@ -719,12 +727,9 @@ ggplot(homes, aes(x = totalvalue)) +
 # etc.). ChatGPT learns from the data it ingests, so you have to assume it will
 # save whatever you paste into it (and potentially share with the next person).
 
-# Keep learning----------------------------------------------------------------- 
+# StatLab would love to help you learn the fundamentals!
 
-# - Come to our other UVA Library Research Data Services R workshops 
-# https://cal.lib.virginia.edu/calendar/events?cid=4299&t=d&d=0000-00-00&cal=4299&ct=66252&inc=0
-# or a workshop offered by UVA Health Science Library: 
-# https://cal.hsl.virginia.edu/calendar/data?cid=5619&t=g&d=0000-00-00&cal=5619&ct=29775&inc=0
+# Keep learning----------------------------------------------------------------- 
 
 # - Reach out to our StatLab for one-on-one consultation or visit drop-in hours: 
 # https://library.virginia.edu/data/statlab
