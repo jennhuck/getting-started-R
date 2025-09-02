@@ -26,7 +26,7 @@ We rely on the Albemarle homes data prepared by UVA Library StatLab.
 
 For this worskhop you need to download and install R, RStudio, and the tidyverse package.
 
-You need the most current version of R and the most current version of the tidyverse package.  It is less critical that RStudio is updated to the latest version. [Installing and updating instructions for R are here](https://clayford.github.io/r_install/). 
+You need the most current version of R and the most current version of the tidyverse package.  It is less critical that RStudio is updated to the latest version. [Installing and updating instructions for R are here](https://uvastatlab.github.io/install_r/). 
 
 ## Project goals and description 
 
