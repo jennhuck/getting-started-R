@@ -1,6 +1,6 @@
 # Getting Started with R
 # Jennifer Huck, Data Librarian, UVA Library
-# Fall 2025
+# Spring 2026
 
 # Getting Started with R: Goals for our Workshop--------------------------------------------
   
